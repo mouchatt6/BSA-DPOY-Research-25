@@ -309,12 +309,12 @@ Recommended execution order:
 
 ---
 
-## 6. Next Steps
+## 5. Next Steps
 
 The current pipeline is a working prototype, not a finished product. The
 items below are the open threads we'd want a future BSA cohort to pick up.
 
-### 6.1 Address overfitting
+### 5.1 Address overfitting
 
 - The two XGB classifiers report AUC ≈ 1.0 / Log Loss ≈ 0.0001 on a held-out
   20% split. A model that perfect on real possession data isn't a model —
@@ -330,7 +330,7 @@ items below are the open threads we'd want a future BSA cohort to pick up.
     it by a meaningful margin on the held-out player groups, the
     additional model capacity isn't earning its keep.
 
-### 6.2 Eliminate data leakage
+### 5.2 Eliminate data leakage
 
 - The `derive_scoring_event()` label is computed from the same matchup
   counting stats (`matchup_field_goals_made`, `matchup_blocks`,
@@ -348,7 +348,7 @@ items below are the open threads we'd want a future BSA cohort to pick up.
     compute this column without knowing whether the offensive player
     scored on this possession?"* — if not, drop it.
 
-### 6.3 New feature engineering
+### 5.3 New feature engineering
 
 - **Lineup context**: a defender's scoring probability allowed depends on
   the other four players on the floor. Add lineup-level defensive rating
@@ -362,7 +362,7 @@ items below are the open threads we'd want a future BSA cohort to pick up.
 - **Temporal features**: rest days, back-to-backs, late-game vs.
   early-game splits, garbage-time filtering.
 
-### 6.4 Other model explorations
+### 5.4 Other model explorations
 
 - **Gradient-boosted survival / hazard models** for "how many possessions
   before this defender gives up a bucket?" — a more natural framing than
